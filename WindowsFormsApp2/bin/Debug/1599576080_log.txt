@@ -1,0 +1,36 @@
+15:41:20:020	5680	Check and remove old log files...
+15:41:20:026	5680	args: -epool stratum+tcp://daggerhashimoto.eu-new.nicehash.com:3353 -ewal 3F1zYbiCB5JKR21GiFgFwzxZoyJzTsk3U2 -epsw x -allpools 1 
+15:41:20:031	5680	
+15:41:20:036	5680	ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+15:41:20:040	5680	บ                Claymore's Dual GPU Miner - v15.0               บ
+15:41:20:044	5680	บ              ETH + DCR/SIA/LBC/PASC/BLAKE2S/KECCAK             บ
+15:41:20:048	5680	บ                       Supercharged Edition                     บ
+15:41:20:052	5680	ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+15:41:20:067	5680	
+15:41:20:070	5680	b755 
+15:41:20:275	5680	ETH: 1 pool is specified
+15:41:20:279	5680	Main Ethereum pool is daggerhashimoto.eu-new.nicehash.com:3353
+15:41:20:284	5680	DCR: 0 pool is specified
+15:41:20:334	5680	OpenCL platform: NVIDIA CUDA
+15:41:20:338	5680	AMD OpenCL platform not found 
+15:41:20:364	5680	CUDA initializing...
+
+15:41:20:369	5680	NVIDIA Cards available: 1 
+15:41:20:373	5680	CUDA Driver Version/Runtime Version: 11.0/8.0
+15:41:20:378	5680	GPU #0: GeForce GTX 1660 Ti, 6144 MB available, 24 compute units, capability: 7.5  (pci bus 9:0:0)
+15:41:20:382	5680	Total cards: 1 
+15:41:24:396	5680	NVML version: 10.436.02
+15:41:25:197	5680	SSL: Imported 107 certificates from local storage
+15:41:25:247	61ac	ETH: Stratum - connecting to 'daggerhashimoto.eu-new.nicehash.com' <172.65.200.133> port 3353 (unsecure)
+15:41:25:285	61ac	sent: {"worker": "eth1.0", "jsonrpc": "2.0", "params": ["3F1zYbiCB5JKR21GiFgFwzxZoyJzTsk3U2", "x"], "id": 2, "method": "eth_submitLogin"}
+
+15:41:25:290	61ac	ETH: Stratum - Connected (daggerhashimoto.eu-new.nicehash.com:3353) (unsecure)
+15:41:25:303	5680	No pool specified for Decred! Ethereum-only mining mode is enabled
+15:41:25:312	5680	ETHEREUM-ONLY MINING MODE ENABLED (-mode 1)
+15:41:25:321	5680	ETH: eth-proxy stratum mode
+15:41:25:328	5680	"-allpools" option is set, default pools can be used for devfee, check "Readme" file for details.
+15:41:25:333	5680	Watchdog enabled
+15:41:25:339	5680	Remote management (READ-ONLY MODE) is enabled on port 3333
+15:41:25:344	5680	
+15:41:25:351	61ac	Socket was closed remotely (by pool)
+15:41:25:356	61ac	ETH: Job timeout, disconnect, retry in 20 sec...

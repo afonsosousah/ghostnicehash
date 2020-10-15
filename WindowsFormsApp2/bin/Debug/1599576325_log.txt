@@ -1,0 +1,52 @@
+15:45:25:344	5320	Check and remove old log files...
+15:45:25:349	5320	args: -epool stratum+tcp://daggerhashimoto.eu-new.nicehash.com:3353 -ewal 3F1zYbiCB5JKR21GiFgFwzxZoyJzTsk3U2 -epsw x -allpools 1 
+15:45:25:355	5320	
+15:45:25:361	5320	ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+15:45:25:365	5320	บ                Claymore's Dual GPU Miner - v15.0               บ
+15:45:25:369	5320	บ              ETH + DCR/SIA/LBC/PASC/BLAKE2S/KECCAK             บ
+15:45:25:373	5320	บ                       Supercharged Edition                     บ
+15:45:25:377	5320	ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+15:45:25:392	5320	
+15:45:25:396	5320	b755 
+15:45:25:602	5320	ETH: 1 pool is specified
+15:45:25:607	5320	Main Ethereum pool is daggerhashimoto.eu-new.nicehash.com:3353
+15:45:25:612	5320	DCR: 0 pool is specified
+15:45:25:660	5320	OpenCL platform: NVIDIA CUDA
+15:45:25:665	5320	AMD OpenCL platform not found 
+15:45:25:691	5320	CUDA initializing...
+
+15:45:25:696	5320	NVIDIA Cards available: 1 
+15:45:25:700	5320	CUDA Driver Version/Runtime Version: 11.0/8.0
+15:45:25:705	5320	GPU #0: GeForce GTX 1660 Ti, 6144 MB available, 24 compute units, capability: 7.5  (pci bus 9:0:0)
+15:45:25:709	5320	Total cards: 1 
+15:45:29:724	5320	NVML version: 10.436.02
+15:45:30:557	5320	SSL: Imported 107 certificates from local storage
+15:45:30:578	564c	ETH: Stratum - connecting to 'daggerhashimoto.eu-new.nicehash.com' <172.65.200.133> port 3353 (unsecure)
+15:45:30:617	564c	sent: {"worker": "eth1.0", "jsonrpc": "2.0", "params": ["3F1zYbiCB5JKR21GiFgFwzxZoyJzTsk3U2", "x"], "id": 2, "method": "eth_submitLogin"}
+
+15:45:30:621	564c	ETH: Stratum - Connected (daggerhashimoto.eu-new.nicehash.com:3353) (unsecure)
+15:45:30:662	5320	No pool specified for Decred! Ethereum-only mining mode is enabled
+15:45:30:668	5320	ETHEREUM-ONLY MINING MODE ENABLED (-mode 1)
+15:45:30:673	5320	ETH: eth-proxy stratum mode
+15:45:30:678	5320	"-allpools" option is set, default pools can be used for devfee, check "Readme" file for details.
+15:45:30:684	5320	Watchdog enabled
+15:45:30:689	5320	Remote management (READ-ONLY MODE) is enabled on port 3333
+15:45:30:694	564c	Socket was closed remotely (by pool)
+15:45:30:701	564c	ETH: Job timeout, disconnect, retry in 20 sec...
+15:45:30:700	5320	
+15:45:50:713	564c	ETH: Stratum - connecting to 'daggerhashimoto.eu-new.nicehash.com' <172.65.200.133> port 3353 (unsecure)
+15:45:50:746	564c	sent: {"worker": "eth1.0", "jsonrpc": "2.0", "params": ["3F1zYbiCB5JKR21GiFgFwzxZoyJzTsk3U2", "x"], "id": 2, "method": "eth_submitLogin"}
+
+15:45:50:752	564c	ETH: Stratum - Connected (daggerhashimoto.eu-new.nicehash.com:3353) (unsecure)
+15:45:50:813	564c	Socket was closed remotely (by pool)
+15:45:50:819	564c	ETH: Job timeout, disconnect, retry in 20 sec...
+15:45:55:627	5b68	GPU0 t=38C fan=60%
+15:45:55:841	3bb4	em hbt: 5140, fm hbt: 47, 
+15:45:55:846	3bb4	watchdog - thread 0 (gpu0), hb time 0
+15:45:55:850	3bb4	watchdog - thread 1 (gpu0), hb time 16
+15:46:10:832	564c	ETH: Stratum - connecting to 'daggerhashimoto.eu-new.nicehash.com' <172.65.200.133> port 3353 (unsecure)
+15:46:10:863	564c	sent: {"worker": "eth1.0", "jsonrpc": "2.0", "params": ["3F1zYbiCB5JKR21GiFgFwzxZoyJzTsk3U2", "x"], "id": 2, "method": "eth_submitLogin"}
+
+15:46:10:868	564c	ETH: Stratum - Connected (daggerhashimoto.eu-new.nicehash.com:3353) (unsecure)
+15:46:10:939	564c	Socket was closed remotely (by pool)
+15:46:10:946	564c	ETH: Job timeout, disconnect, retry in 20 sec...

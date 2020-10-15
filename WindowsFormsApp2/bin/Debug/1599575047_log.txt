@@ -1,0 +1,11 @@
+15:24:07:888	5fd0	commandline: claymore.exe  -epool stratum+tcp://daggerhashimoto.eu-new.nicehash.com:3353 -ewal 3F1zYbiCB5JKR21GiFgFwzxZoyJzTsk3U2 -epsw x -allpools 1
+15:24:07:892	5fd0	
+15:24:07:898	5fd0	ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+15:24:07:904	5fd0	บ      Claymore's Dual ETH + DCR/SC AMD GPU Miner v5.0 Beta      บ
+15:24:07:909	5fd0	ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+15:24:07:914	5fd0	
+15:24:08:119	5fd0	ETH: 1 pool is specified
+15:24:08:123	5fd0	Main Ethereum pool is daggerhashimoto.eu-new.nicehash.com:3353
+15:24:08:139	5fd0	DCR: 0 pool is specified
+15:24:08:191	5fd0	OpenCL platform: NVIDIA CUDA
+15:24:08:195	5fd0	AMD platform not found 
