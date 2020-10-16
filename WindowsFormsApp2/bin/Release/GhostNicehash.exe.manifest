@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GhostNicehash.exe" size="263608">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GhostNicehash.exe" size="356280">
       <assemblyIdentity name="GhostNicehash" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>W4Kq+u37el6m/jRiTzV6kKZndCg9JSQFHs+amgALka8=</dsig:DigestValue>
+        <dsig:DigestValue>ObN2CQiYKzqPS50ZF7xAEz6xyv5YeEd72l/bmgkOZG8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

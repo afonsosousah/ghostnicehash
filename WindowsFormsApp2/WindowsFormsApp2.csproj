@@ -136,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo_small_dark %281%29.ico" />
+    <None Include="Resources\Spinner-1s-200px.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

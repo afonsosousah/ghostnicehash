@@ -71,29 +71,66 @@ namespace WindowsFormsApp2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.TextLength == 0)
-            {
-                MessageBox.Show("Please add wallet address! (go to options)");
-            }
-            else if(label4.Text=="Mining")
+            if(label4.Text=="Mining")
             {
                 if (Process.GetProcessesByName("claymore").Length > 0 && Process.GetProcessesByName("claymore") != null)
                 {
                     Process proc = Process.GetProcessesByName("claymore")[0];
                     proc.Kill();
+                    button1.BackgroundImage = WindowsFormsApp2.Properties.Resources.Spinner_1s_200px;
                 }
             }
             else
             {
-                Process process = new Process();
-                ProcessStartInfo startInfo = new ProcessStartInfo();
-                startInfo.WindowStyle = ProcessWindowStyle.Hidden;
-                startInfo.CreateNoWindow = true;
-                startInfo.FileName = AppDomain.CurrentDomain.BaseDirectory + "claymore.exe";
-                startInfo.Arguments = "-epool daggerhashimoto.eu.nicehash.com:3353 -ewal " + textBox1.Text.Trim() + " -eworker afhMiner -li " + trackBar1.Value + " -epsw x -dbg -1 -retrydelay 1 -ftime 55 -tt 79 -ttli 77 -tstop 89 -tstart 85 -fanmin 30 -r 0 -esm 3 -erate 1 -allcoins 1 -allpools 1";
-                process.StartInfo = startInfo;
-                process.Start();
-                SetParent(process.MainWindowHandle, this.Handle);
+
+                if (label15.Text == "NiceHash Mode")
+                {
+                    if (textBox1.TextLength == 0)
+                    {
+                        MessageBox.Show("Please add wallet address! (go to options)");
+                    }
+                    else
+                    {
+                        //NiceHash mode
+                        Process process = new Process();
+                        ProcessStartInfo startInfo = new ProcessStartInfo();
+                        startInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                        startInfo.CreateNoWindow = true;
+                        startInfo.FileName = AppDomain.CurrentDomain.BaseDirectory + "claymore.exe";
+                        startInfo.Arguments = "-epool daggerhashimoto.eu.nicehash.com:3353 -ewal " + textBox1.Text.Trim() + " -eworker afhMiner -li " + trackBar1.Value + " -epsw x -dbg -1 -retrydelay 1 -ftime 55 -tt 79 -ttli 77 -tstop 89 -tstart 85 -fanmin 30 -r 0 -esm 3 -erate 1 -allcoins 1 -allpools 1";
+                        process.StartInfo = startInfo;
+                        process.Start();
+                        SetParent(process.MainWindowHandle, this.Handle);
+                    }
+                    
+
+                }
+                else if(label15.Text == "Direct Mining Mode")
+                {
+                    if (textBox2.TextLength == 0)
+                    {
+                        MessageBox.Show("Please add wallet address! (go to options)");
+                    }
+                    if (textBox3.TextLength == 0)
+                    {
+                        MessageBox.Show("Please add pool address! (go to options)");
+                    }
+                    else
+                    {
+                        //Direct mining mode
+                        Process process = new Process();
+                        ProcessStartInfo startInfo = new ProcessStartInfo();
+                        startInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                        startInfo.CreateNoWindow = true;
+                        startInfo.FileName = AppDomain.CurrentDomain.BaseDirectory + "claymore.exe";
+                        startInfo.Arguments = "-epool " + textBox3.Text.Trim() + " -ewal " + textBox2.Text.Trim() + " -eworker afhMiner -li " + trackBar1.Value + " -epsw x -dbg -1 -retrydelay 1 -ftime 55 -tt 79 -ttli 77 -tstop 89 -tstart 85 -fanmin 30 -r 0 -esm 3 -erate 1 -allcoins 1 -allpools 1";
+                        process.StartInfo = startInfo;
+                        process.Start();
+                        SetParent(process.MainWindowHandle, this.Handle);
+                    }
+
+                }
+
             }
 
         }
@@ -140,6 +177,7 @@ namespace WindowsFormsApp2
             {
                 label4.ForeColor = Color.Red; 
                 label4.Text = "Closed";
+                button1.BackgroundImage = WindowsFormsApp2.Properties.Resources.start;
             }
         }
 
@@ -150,7 +188,8 @@ namespace WindowsFormsApp2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            label15.Text = "NiceHash Mode";
+            label15.ForeColor = Color.FromArgb(251, 195, 66);
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -165,7 +204,18 @@ namespace WindowsFormsApp2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(panel1.Visible==false)
+            if (panel2.Visible == true)
+            {
+                label15.Text = "NiceHash Mode";
+                label15.ForeColor = Color.FromArgb(251, 195, 66);
+            }
+            else if (panel3.Visible == true)
+            {
+                label15.Text = "Direct Mining Mode";
+                label15.ForeColor = Color.FromArgb(0, 192, 192);
+            }
+
+            if (panel1.Visible==false)
             {
                 panel1.Visible = true;
             }
@@ -193,19 +243,73 @@ namespace WindowsFormsApp2
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if(this.BackColor==SystemColors.ButtonFace)
+            if(this.BackColor==Color.FromArgb(226, 226, 226))
             {
-                this.BackColor = SystemColors.ControlDarkDark;
+                this.BackColor = Color.FromArgb(58, 57, 57);
                 button4.Text = "Light Mode";
             }
-            else if(this.BackColor == SystemColors.ControlDarkDark)
+            else if(this.BackColor == Color.FromArgb(58, 57, 57))
             {
-                this.BackColor = SystemColors.ButtonFace;
+                this.BackColor = Color.FromArgb(226, 226, 226);
                 button4.Text = "Dark Mode";
             }
         }
 
         private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (panel2.Visible == true)
+            {
+                panel3.Visible = true;
+                panel2.Visible = false;
+            }
+            else if (panel2.Visible == false)
+            {
+                panel3.Visible = false;
+                panel2.Visible = true;
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            textBox3.Text = "eu1.ethermine.org:4444";
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            textBox2.Text = "0x94b57107c9163c507355C3e7755d3eb6f4306a89";
+        }
+
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }
