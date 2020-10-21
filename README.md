@@ -3,7 +3,7 @@
 
 
 ### Mining on restricted environments made easy!
-Written in C#, this GUI Miner is using Claymore's Dual Ethereum Miner as it's ethereum miner. Easy to use and supports mining to a NiceHash wallet or a normal Ethereum wallet.
+Written in C#, this GUI Miner is using Claymore's Dual Ethereum Miner as it's miner. Easy to use and supports mining to a NiceHash wallet or a normal Ethereum wallet.
 #
 ### Features
 - Easy to use
@@ -30,7 +30,7 @@ Written in C#, this GUI Miner is using Claymore's Dual Ethereum Miner as it's et
 
 made by afonsosousah
 
-[![N|Solid](/docs/afonso1234logo_trans100x100.gif)](https://www.afonsosousah.xyz)
+[![N|Solid](https://i.imgur.com/1BfQcE1.gif)](https://www.afonsosousah.xyz)
 
 
    [1.1]: <https://github.com/afonsosousah/ghostnicehash/releases/download/1.1/GhostNicehash.exe>
