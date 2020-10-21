@@ -1,6 +1,6 @@
 ![Downloads](https://img.shields.io/github/downloads/afonsosousah/ghostnicehash/total.svg)
 # 
-# ![Banner](https://i.imgur.com/r8nVReP.png)
+# ![Banner](https://i.imgur.com/jzfiMgY.png)
 
 
 ### Mining on restricted environments made easy!
