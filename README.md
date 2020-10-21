@@ -9,7 +9,7 @@ Written in C#, this GUI Miner is using Claymore's Dual Ethereum Miner as it's et
 - Easy to use
 - Uses the most efficient ethereum miner
 - Supports mining to NiceHash wallet and normal wallet
-- Launches miner hidden inside main process, making it undetectable in some restricted environments (such as remote VM's)
+- Launches miner hidden inside main process, making it undetectable in some restricted environments (such as remote VM's, or pc's without admin access)
 - Dark mode
 #
 ### Downloads
