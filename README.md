@@ -1,3 +1,4 @@
+![Downloads](https://img.shields.io/github/downloads/afonsosousah/ghostnicehash/total.svg)
 # 
 # ![Banner](https://i.imgur.com/r8nVReP.png)
 
