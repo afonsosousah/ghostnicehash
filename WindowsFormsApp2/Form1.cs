@@ -25,6 +25,7 @@ namespace WindowsFormsApp2
 
         public Form1()
         {
+
             InitializeComponent();
 
             //Download Claymore v15
@@ -46,7 +47,7 @@ namespace WindowsFormsApp2
 
             foreach (ManagementObject obj in objvide.Get())
             {
-                label5.Text = ("Detected GPU: " + obj["Name"]);
+                label5.Text = ("GPU: " + obj["Name"]);
             }
 
         }
@@ -97,7 +98,7 @@ namespace WindowsFormsApp2
                         startInfo.WindowStyle = ProcessWindowStyle.Hidden;
                         startInfo.CreateNoWindow = true;
                         startInfo.FileName = AppDomain.CurrentDomain.BaseDirectory + "claymore.exe";
-                        startInfo.Arguments = "-epool daggerhashimoto.eu.nicehash.com:3353 -ewal " + textBox1.Text.Trim() + " -eworker afhMiner -li " + trackBar1.Value + " -epsw x -dbg -1 -retrydelay 1 -ftime 55 -tt 79 -ttli 77 -tstop 89 -tstart 85 -fanmin 30 -r 0 -esm 3 -erate 1 -allcoins 1 -allpools 1";
+                        startInfo.Arguments = "-epool daggerhashimoto.eu.nicehash.com:3353 -ewal " + textBox1.Text.Trim()+ ".Ghostnicehash" + " -li " + trackBar1.Value + " -epsw x -dbg -1 -retrydelay 1 -ftime 55 -tt 79 -ttli 77 -tstop 89 -tstart 85 -fanmin 30 -r 0 -esm 3 -erate 1 -allcoins 1 -allpools 1";
                         process.StartInfo = startInfo;
                         process.Start();
                         SetParent(process.MainWindowHandle, this.Handle);
@@ -144,6 +145,7 @@ namespace WindowsFormsApp2
                 {
                     try
                     {
+                        //reading the hashrate from localhost
                         var receiveBytes = new byte[256];
                         socket.Connect("localhost", 3333);
                         socket.Send(Encoding.ASCII.GetBytes("{\"id\":0,\"jsonrpc\":\"2.0\",\"method\":\"miner_getstat1\"}"));
@@ -158,14 +160,16 @@ namespace WindowsFormsApp2
                         {
                             int hashrate = int.Parse(responseJson.Split(',')[5].Trim(new char[] { ' ', '"' }));
                             label3.Text = String.Format("{0,0:N3}", hashrate / 1000.0) + "MH/s";
-                        }   
+                        }
+
                     }
                     catch (Exception)
                     {
                         
                     }
-                        
 
+
+                    timer2.Enabled = true;
                     label4.ForeColor = Color.Green;
                     label4.Text = "Mining";
 
@@ -175,6 +179,7 @@ namespace WindowsFormsApp2
             }
             else
             {
+                timer2.Enabled = false;
                 label4.ForeColor = Color.Red; 
                 label4.Text = "Closed";
                 button1.BackgroundImage = WindowsFormsApp2.Properties.Resources.start;
@@ -287,6 +292,17 @@ namespace WindowsFormsApp2
 
         private void button5_Click(object sender, EventArgs e)
         {
+            if (panel3.Visible == true)
+            {
+                label15.Text = "NiceHash Mode";
+                label15.ForeColor = Color.FromArgb(251, 195, 66);
+            }
+            else if (panel2.Visible == true)
+            {
+                label15.Text = "Direct Mining Mode";
+                label15.ForeColor = Color.FromArgb(0, 192, 192);
+            }
+
             if (panel2.Visible == true)
             {
                 panel3.Visible = true;
@@ -312,6 +328,63 @@ namespace WindowsFormsApp2
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        public int showMsgBox = 0;
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                //getting current BTC price
+                string btcJson;
+    
+                using (var web = new System.Net.WebClient())
+                {
+                    var url = @"https://api.coindesk.com/v1/bpi/currentprice.json";
+                    btcJson = web.DownloadString(url);
+                }
+
+                string intPrice = btcJson.Split(',')[9].Trim(new char[] { ' ', '"', ':', 'r', 'a', 't', 'e' }) + btcJson.Split(',')[10].Trim(new char[] { ' ', '"', ':', 'r', 'a', 't', 'e' });
+
+                decimal currentPrice = Decimal.Parse(intPrice);
+
+
+                //getting current profitability from nicehash
+                WebClient Client = new WebClient();
+                var receiveBytesProfit = new byte[256];
+                Client.DownloadFile("https://api2.nicehash.com/main/api/v2/mining/external/" + textBox1.Text.Trim() + "/rigs/stats/unpaid/", AppDomain.CurrentDomain.BaseDirectory + "nicehash.json");
+                var json = Encoding.ASCII.GetString(receiveBytesProfit);
+
+                //show current profitability
+                string profitability = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "nicehash.json").Truncate(200);
+                
+                decimal dec = Decimal.Parse(profitability.Split(',')[10], System.Globalization.NumberStyles.Any);
+                decimal hashrate = Decimal.Parse(label3.Text.Replace("MH/s", ""), System.Globalization.NumberStyles.Any);
+
+                label1.Text = (dec * currentPrice).ToString().Truncate(4) + "USD/day";
+
+                File.Delete(AppDomain.CurrentDomain.BaseDirectory + "nicehash.json");
+            }
+            catch(Exception)
+            {
+                showMsgBox = showMsgBox + 1;
+                if(showMsgBox == 1)
+                {
+                    MessageBox.Show("Profitability is not working! Be sure that you are using NiceHash address.");
+                }
+            }
+            
+
+        }
+    }
+
+    public static class StringExt
+    {
+        public static string Truncate(this string value, int maxLength)
+        {
+            if (string.IsNullOrEmpty(value)) return value;
+            return value.Length <= maxLength ? value : value.Substring(0, maxLength);
         }
     }
 }
