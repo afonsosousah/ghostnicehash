@@ -17,6 +17,7 @@ Written in C#, this GUI Miner is using Claymore's Dual Ethereum Miner as it's mi
 
 | Version | Download |
 | ------ | ------ |
+| 1.2 | [Download][1.2] |
 | 1.1 | [Download][1.1] |
 | 1.0| [Download][1.0] |
 #
@@ -33,6 +34,6 @@ made by afonsosousah
 
 [![N|Solid](https://i.imgur.com/1BfQcE1.gif)](https://www.afonsosousah.xyz)
 
-
+   [1.2]: <https://github.com/afonsosousah/ghostnicehash/releases/download/1.2/GhostNicehash.exe>
    [1.1]: <https://github.com/afonsosousah/ghostnicehash/releases/download/1.1/GhostNicehash.exe>
    [1.0]: <https://github.com/afonsosousah/ghostnicehash/releases/download/1.0/GhostNicehash.exe>
